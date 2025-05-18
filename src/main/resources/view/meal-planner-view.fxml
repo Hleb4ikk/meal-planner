@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gleb.dailymealplanner.controllers.MealPlannerController" hgap="10" vgap="10">
+
+    <!-- Заголовок -->
+    <Label text="Редактор плана питания" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <!-- Список приемов пищи -->
+    <Label text="Приемы пищи" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <ListView fx:id="mealListView" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+
+    <!-- Таблица продуктов в выбранном приеме пищи -->
+    <Label text="Продукты в приеме пищи" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <TableView fx:id="mealProductTable" GridPane.rowIndex="2" GridPane.columnIndex="1">
+        <columns>
+            <TableColumn text="Название" fx:id="productNameColumn"/>
+            <TableColumn text="Вес (г)" fx:id="productWeightColumn"/>
+            <TableColumn text="Калории" fx:id="productCaloriesColumn"/>
+        </columns>
+    </TableView>
+
+    <!-- Контролы редактирования -->
+    <Label text="Масса продукта (г)" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Slider fx:id="weightSlider" min="50" max="500" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Button text="Добавить продукт" onAction="#onAddProductToMeal" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <Button text="Удалить продукт" onAction="#onRemoveProductFromMeal" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+</GridPane>

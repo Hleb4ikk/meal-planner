@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gleb.dailymealplanner.controllers.UserProfileController" hgap="10" vgap="10">
+
+    <!-- Заголовок -->
+    <Label text="Профиль пользователя" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <!-- Поля ввода данных -->
+    <Label text="Вес (кг):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="weightField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Рост (см):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="heightField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Возраст:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="ageField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Уровень активности:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="activityLevelComboBox" GridPane.rowIndex="4" GridPane.columnIndex="1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Low"/>
+                <String fx:value="Normal"/>
+                <String fx:value="Average"/>
+                <String fx:value="High"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Расчет нормы калорий -->
+    <Button text="Рассчитать" onAction="#onCalculateCalories" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <Label text="Суточная норма калорий:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <Label fx:id="caloriesLabel" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <!-- Сохранение профиля -->
+    <Button text="Сохранить профиль" onAction="#onSaveProfile" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+</GridPane>

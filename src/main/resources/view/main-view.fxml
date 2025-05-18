@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gleb.dailymealplanner.controllers.MainController" hgap="10" vgap="10">
+
+    <!-- Заголовки -->
+    <Label text="Категории продуктов" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <Label text="Список продуктов" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <!-- Список категорий -->
+    <ListView fx:id="categoryListView" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <!-- Список продуктов -->
+    <ListView fx:id="productListView" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <!-- Фильтрация -->
+    <TextField fx:id="searchField" promptText="Поиск продукта..." GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Button text="Искать" onAction="#onSearchProduct" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+    <!-- Добавление и удаление -->
+    <Button text="Добавить категорию" onAction="#onAddCategory" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <Button text="Удалить категорию" onAction="#onRemoveCategory" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Button text="Добавить продукт" onAction="#onAddProduct" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <Button text="Удалить продукт" onAction="#onRemoveProduct" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Button text="Редактор плана питания" onAction="#onOpenMealPlanner" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <Button text="Экспорт плана питания" onAction="#onOpenExportView" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <Button text="Профиль пользователя" onAction="#onOpenUserProfile" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+
+</GridPane>
